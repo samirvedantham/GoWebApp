@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -24,9 +23,9 @@ func main() {
 
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
-	http.HandleFunc("/divide", Divide)
+	//http.HandleFunc("/divide", Divide)
 
-	_, _ = fmt.Printf(fmt.Sprintf("Starting application on Port: %s", PortNumber))
+	//_, _ = fmt.Printf(fmt.Sprintf("Starting application on Port: %s\n", PortNumber))
 
 	_ = http.ListenAndServe(PortNumber, nil) //if there's an error I don't care
 
