@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/samirvedantham/GoWebApp/pkg/handlers"
@@ -25,9 +26,10 @@ func main() {
 
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/about", handlers.About)
+
 	//http.HandleFunc("/divide", Divide)
 
-	//_, _ = fmt.Printf(fmt.Sprintf("Starting application on Port: %s\n", PortNumber))
+	fmt.Println(fmt.Sprintf("Starting application on Port: %s\n", PortNumber))
 
 	_ = http.ListenAndServe(PortNumber, nil) //if there's an error I don't care
 
