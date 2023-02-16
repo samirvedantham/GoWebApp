@@ -1,12 +1,14 @@
-package main
+package handlers
 
 import (
 	"net/http"
+
+	"github.com/samirvedantham/GoWebApp/pkg/render"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	//fmt.Fprintf(w, "This is the home page!")
-	RenderTemplate(w, "home.html")
+	render.RenderTemplate(w, "home.page.tmpl")
 
 }
 
@@ -14,7 +16,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 func About(w http.ResponseWriter, r *http.Request) {
 	//sum := AddValues(2, 2)
 	//_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2+2 is: %d", sum))
-	RenderTemplate(w, "about.html")
+	render.RenderTemplate(w, "about.page.tmpl")
 }
 
 /*func Divide(w http.ResponseWriter, r *http.Request) {
