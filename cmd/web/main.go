@@ -2,14 +2,26 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
+	"github.com/samirvedantham/GoWebApp/pkg/config"
 	"github.com/samirvedantham/GoWebApp/pkg/handlers"
+	"github.com/samirvedantham/GoWebApp/pkg/render"
 )
 
 const PortNumber = ":8080"
 
 func main() {
+
+	var app config.AppConfig
+
+	tc, err := render.CreateTemplateCache()
+	if err != nil {
+		log.Fatal("cannot create template cache")
+	}
+
+	app.TemplateCache = tc
 
 	/*http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
